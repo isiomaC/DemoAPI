@@ -161,7 +161,7 @@ const projectController = {
         try{
             const project = await Project.findById(req.params.id)
             if (!req.params.id.match(/^[0-9a-fA-F]{24}$/) || !project) {
-                 return res.status(404).json({ msg: 'Project not found' });
+                return res.status(404).json({ msg: 'Project not found' });
             }
     
             var previewsBucket = new mongodb.GridFSBucket(mongoose.connection.db, {
